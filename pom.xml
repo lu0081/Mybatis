@@ -31,11 +31,30 @@
 		<jedis.version>2.9.0</jedis.version>
 		<spring-data-redis>2.0.7.RELEASE</spring-data-redis>
 		<mybatis.version>3.4.6</mybatis.version>
+		<log4j-core.version>2.11.0</log4j-core.version>
+		<slf4j.version>1.7.25</slf4j.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis -->
+		<dependency>
+    		<groupId>org.apache.logging.log4j</groupId>
+   		    <artifactId>log4j-core</artifactId>
+    		<version>${log4j-core.version}</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-api</artifactId>
+    		<version>${slf4j.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+		<dependency>
+    		<groupId>org.slf4j</groupId>
+   			<artifactId>slf4j-log4j12</artifactId>
+    		<version>${slf4j.version}</version>
+    		<scope>test</scope>
+		</dependency>
+		
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-redis</artifactId>
